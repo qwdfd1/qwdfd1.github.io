@@ -6,9 +6,15 @@
 * License: https://bootstrapmade.com/license/
 */
 
+
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+:root {
+  --sidebar-size : 20%;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
@@ -31,6 +37,60 @@ h4,
 h5,
 h6 {
   font-family: "Raleway", sans-serif;
+}
+
+
+/* --------------------------------------------------------------
+# Fonts
+---------------------------------------------------------------*/
+
+@font-face {
+  font-family: "NanumSquare";
+  src: url("../fonts/nanum-square/NanumSquare_acR.ttf") format("truetype"), 
+  url("../fonts/nanum-square/NanumSquareOTF_acR.otf") format("opentype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "NanumSquare";
+  src: url("../fonts/nanum-square/NanumSquare_acB.ttf") format("truetype"), 
+  url("../fonts/nanum-square/NanumSquareOTF_acB.otf") format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "NanumSquare";
+  src: url("../fonts/nanum-square/NanumSquare_acEB.ttf") format("truetype"), 
+  url("../fonts/nanum-square/NanumSquareOTF_acEB.otf") format("opentype");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "NanumBarunGothic";
+  src: url("../fonts/nanum-barun-gothic/NanumBarunGothicUltraLight.ttf") format("truetype"), 
+  url("../fonts/nanum-barun-gothic/NanumBarunGothicUltraLight.otf") format("opentype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "NanumBarunGothic";
+  src: url("../fonts/nanum-barun-gothic/NanumBarunGothicLight.ttf") format("truetype"), 
+  url("../fonts/nanum-barun-gothic/NanumBarunGothicLight.otf") format("opentype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "NanumBarunGothic";
+  src: url("../fonts/nanum-barun-gothic/NanumBarunGothic.ttf") format("truetype"), 
+  url("../fonts/nanum-barun-gothic/NanumBarunGothic.otf") format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "NanumBarunGothic";
+  src: url("../fonts/nanum-barun-gothic/NanumBarunGothicBold.ttf") format("truetype"), 
+  url("../fonts/nanum-barun-gothic/NanumBarunGothicBold.otf") format("opentype");
+  font-weight: 800;
 }
 
 /*--------------------------------------------------------------
@@ -74,11 +134,11 @@ h6 {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: var(--sidebar-size);
   transition: all ease-in-out 0.5s;
   z-index: 9997;
   transition: all 0.5s;
-  padding: 0 15px;
+  padding: 0 30px;
   background: #040b14;
   overflow-y: auto;
 }
@@ -86,7 +146,7 @@ h6 {
 #header .profile img {
   margin: 15px auto;
   display: block;
-  width: 120px;
+  width: 130px;
   border: 8px solid #2c2f3f;
 }
 
@@ -128,7 +188,8 @@ h6 {
 }
 
 #main {
-  margin-left: 300px;
+  margin-left: var(--sidebar-size);
+  font-family: "NanumBarunGothic";
 }
 
 .container,
@@ -241,9 +302,10 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
-  background-size: cover;
+  background: url("../img/bg-img.jpg") center;
+  background-size: contain;
 }
+
 
 #hero:before {
   content: "";
@@ -251,7 +313,6 @@ h6 {
   position: absolute;
   bottom: 0;
   top: 0;
-  left: 0;
   right: 0;
   z-index: 1;
 }
@@ -374,6 +435,28 @@ section {
   line-height: 0;
 }
 
+.about .content p {
+  font-weight: 600;
+}
+
+.about .content .intro{
+  /* font-family: 'NanumSquare'; */
+  font-weight: 800;
+  font-size: large;
+}
+
+.about .content .body p {
+  /* font-family: 'NanumSquare'; */
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.about .content .contact {
+  /* font-family: 'NanumSquare'; */
+  font-weight: 600;
+  font-size: 15px;
+}
+
 .about .content p:last-child {
   margin-bottom: 0;
 }
@@ -477,6 +560,12 @@ section {
   color: #050d18;
 }
 
+.resume .section-title p {
+  font-weight: 700;
+  font-size: 24px;
+  color: lightslategray;
+}
+
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
@@ -501,6 +590,16 @@ section {
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
+}
+
+.resume .resume-item p {
+  margin: 5px 0;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.resume .resume-item h6 {
+  font-weight: 800;
 }
 
 .resume .resume-item ul {
@@ -530,9 +629,17 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+.portfolio .section-title p {
+  font-weight: 700;
+  font-size: 24px;
+  color: lightslategray;
+}
+
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
+
+
 
 .portfolio #portfolio-flters {
   padding: 0;
@@ -548,8 +655,8 @@ section {
   cursor: pointer;
   display: inline-block;
   padding: 10px 15px 8px 15px;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
   color: #272829;
@@ -570,11 +677,19 @@ section {
   transition: 0.3s;
   position: relative;
   overflow: hidden;
+  height: 300px;
   z-index: 1;
 }
 
+.portfolio .portfolio-wrap .img-fluid {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+
 .portfolio .portfolio-wrap::before {
-  content: "";
+  /* content: ""; */
   background: rgba(255, 255, 255, 0.5);
   position: absolute;
   left: 0;
@@ -585,6 +700,7 @@ section {
   z-index: 2;
   opacity: 0;
 }
+
 
 .portfolio .portfolio-wrap .portfolio-links {
   opacity: 1;
@@ -629,8 +745,20 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Portfolio glightbox
+--------------------------------------------------------------*/
+
+.glightbox-clean .gslide-title {
+  font-size: 2.2em;
+  font-family: "NanumBarunGothic";
+  font-weight: 800;
+
+}
+
+/*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
+
 .portfolio-details {
   padding-top: 40px;
 }
@@ -696,8 +824,10 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.services .icon-box {
-  margin-bottom: 20px;
+.services .section-title p {
+  font-weight: 700;
+  font-size: 24px;
+  color: lightslategray;
 }
 
 .services .icon {
@@ -719,6 +849,15 @@ section {
   line-height: 0;
 }
 
+.services .icon-box {
+  margin-bottom: 20px;
+}
+
+.services .icon-box p{
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .services .icon-box:hover .icon {
   background: #fff;
 }
@@ -734,11 +873,15 @@ section {
   font-size: 18px;
 }
 
-.services .title a {
+.services h4 {
+  font-weight: 700;
+}
+
+.services .title  {
   color: #343a40;
 }
 
-.services .title a:hover {
+.services .title:hover {
   color: #149ddd;
 }
 
@@ -852,6 +995,8 @@ section {
   background: #fff;
   width: 100%;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .contact .info i {
@@ -927,6 +1072,7 @@ section {
 
 .contact .php-email-form .form-group {
   padding-bottom: 8px;
+  font-weight: 700;
 }
 
 .contact .php-email-form .validate {
@@ -1008,6 +1154,7 @@ section {
   color: #fff;
   transition: 0.4s;
   border-radius: 4px;
+  font-weight: 700;
 }
 
 .contact .php-email-form button[type=submit]:hover {
@@ -1081,7 +1228,7 @@ section {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: var(--sidebar-size);
   z-index: 9999;
   background: #040b14;
 }

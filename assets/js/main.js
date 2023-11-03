@@ -132,7 +132,7 @@
   const typed = select('.typed')
   if (typed) {
     let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
+    typed_strings = typed_strings.split('/')
     new Typed('.typed', {
       strings: typed_strings,
       loop: true,
